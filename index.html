@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIP Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>SIP Calculator</h1>
+      <form id="sipForm">
+        <div class="form-group">
+          <label for="monthlyInvestment">Monthly Investment (₹):</label>
+          <input type="number" id="monthlyInvestment" required />
+        </div>
+        <div class="form-group">
+          <label for="annualReturnRate">Expected Annual Return Rate (%):</label>
+          <input type="number" id="annualReturnRate" required />
+        </div>
+        <div class="form-group">
+          <label for="investmentDuration">Investment Duration (Years):</label>
+          <input type="number" id="investmentDuration" required />
+        </div>
+        <button type="button" onclick="calculateSIP()">Calculate</button>
+      </form>
+      <div id="result">
+        <h2>Future Value: ₹<span id="futureValue">0.00</span></h2>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator with Sliders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SIP Calculator</h1>
+        <form id="sipForm">
+            <div class="form-group">
+                <label for="monthlyInvestment">Monthly Investment (₹): <span id="monthlyValue">5000</span></label>
+                <input type="range" id="monthlyInvestment" min="500" max="50000" step="500" value="5000" oninput="updateValue('monthlyInvestment', 'monthlyValue')">
+            </div>
+            <div class="form-group">
+                <label for="annualReturnRate">Expected Annual Return Rate (%): <span id="rateValue">12</span></label>
+                <input type="range" id="annualReturnRate" min="1" max="30" step="0.1" value="12" oninput="updateValue('annualReturnRate', 'rateValue')">
+            </div>
+            <div class="form-group">
+                <label for="investmentDuration">Investment Duration (Years): <span id="durationValue">10</span></label>
+                <input type="range" id="investmentDuration" min="1" max="30" step="1" value="10" oninput="updateValue('investmentDuration', 'durationValue')">
+            </div>
+            <button type="button" onclick="calculateSIP()">Calculate</button>
+        </form>
+        <div id="invested">
+            <h2>Invested Value: ₹<span id="investedval">0.00</span></h2>
+        </div>
+        <div id="result">
+            <h2>Future Value: ₹<span id="futureValue">0.00</span></h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
